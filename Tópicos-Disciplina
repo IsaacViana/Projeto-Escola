@@ -1,0 +1,160 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define TAM 3
+
+ typedef struct disciplinas{
+
+   char nomedisc[100];
+   char nomeprof[100];
+   char aluno[100];
+   int cod;
+   int sem;
+
+   };
+
+  int  main() {
+
+    struct disciplinas disc[TAM];
+    int cont;
+    int cont1;
+    int caddisc;
+    int listdisc;
+    int cont2;
+    int cont5;
+    int excaluno;
+    int alunomatric;
+
+    printf("Digite se deseja cadastrar discplinas: \n");
+    scanf("%d", &caddisc);
+
+    for(cont = 0; cont < TAM; cont ++){
+
+        if( caddisc != 0){
+
+            printf("Digite o nome da disciplina: \n");
+            fflush(stdin);
+            gets(disc[cont].nomedisc);
+
+            printf("Digite o nome do professor: \n");
+            fflush(stdin);
+            gets(disc[cont].nomeprof);
+
+            printf("Digite o codigo da disciplina: \n");
+            scanf("%d", &disc[cont].cod);
+            getchar();
+
+            printf("Digite o semestre em que a disciplina e lecionada: \n");
+            scanf("%d", &disc[cont].sem);
+            getchar();
+
+
+        }
+         else{
+            printf("Outra opcao.\n");
+            getchar();
+            getchar();
+
+         }
+
+    }
+    cont1;
+    for (cont1 = 0; cont1 < TAM; cont1 ++){
+
+    printf("Digite se deseja matricular ou inserir aluno: \n");
+    scanf("%d", &alunomatric);
+    getchar();
+
+    if(alunomatric != 0){
+
+
+            printf("Digite o nome do aluno a ser matriculado: \n");
+            fflush(stdin);
+            gets(disc[cont1].aluno);
+
+            printf("Digite a disciplina em que deseja que o aluno seja matriculado: \n");
+            fflush(stdin);
+            gets(disc[cont1].nomedisc);
+
+            printf("Aluno matriculado na disciplina %s \n", disc[cont1].nomedisc);
+            getchar();
+
+        }
+
+        if(alunomatric == 0){
+                cont1 = TAM;
+                printf("Passar opcao. \n");
+                getchar();
+                getchar();
+
+        }
+    }
+        cont5;
+        for(cont5 = 0; cont5 < TAM; cont5 ++){
+
+        printf("Digite se deseja excluir aluno de disciplina: \n");
+        scanf("%d", &excaluno);
+        getchar();
+
+        if(excaluno != 0){
+
+            printf("Digite nome do aluno a ser excluido:");
+            fflush(stdin);
+            gets(disc[cont].aluno);
+
+           printf("Aluno excluido:", disc[cont].aluno);
+
+        }
+         else{
+
+            printf("Passar opcao.");
+            getchar();
+            getchar();
+         }
+        }
+
+
+     printf("Digite se deseja listar disciplinas sem os alunos: \n");
+     scanf("%d", &listdisc);
+     getchar();
+
+       if(listdisc != 0){
+
+        for( cont2 = 0; cont2 < TAM; cont2 ++){
+
+        printf("Dados da disciplina: %s \n\n", disc[cont2].nomedisc);
+        printf("Nome do professor: %s \n\n", disc[cont2].nomeprof);
+        printf("Codigo da disciplina: %d \n\n", disc[cont2].cod);
+        printf("Semestre em que e lecionada: %d \n\n", disc[cont2].sem);
+        printf("----------------------------------------------");
+        getchar();
+        getchar();
+
+        }
+
+       }
+
+        else{
+
+            printf("Outra opcao.");
+            getchar();
+            getchar();
+        }
+
+        printf("Digite a disciplina da qual deseja os dados e alunos matriculados: \n");
+        fflush(stdin);
+        gets(disc[cont].nomedisc);
+
+        disc[cont].nomeprof;
+        disc[cont].cod;
+        disc[cont].sem;
+        disc[cont1].aluno;
+
+        printf("Nome do professor: %s \n\n", disc[cont].nomeprof);
+        printf("Codigo da disciplina: %d \n\n", disc[cont].cod);
+        printf("Semestre em que e lecionada: %d \n\n", disc[cont].sem);
+        printf("Alunos matriculados: %s", disc[cont1].aluno);
+
+
+    return 0;
+}
